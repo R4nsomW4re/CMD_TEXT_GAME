@@ -17,8 +17,12 @@ class screen:
         else:
             self.stdscr.addstr(y, x, text, mode)
 
-    def draw_text_from_object(self, x: int, y: int, text: text_object, mode = None):
-        pass
+    def draw_char_from_text_object(self, x: int, y: int, text_object: text_object, mode = None):
+        print(text_object.get_character())
+        if not mode:
+            self.stdscr.addstr(y, x, text_object.get_character())
+        else:
+            self.stdscr.addstr(y, x, text_object.get_character(), mode)
 
     def attron(self, attribute):
         self.stdscr.attron(attribute)
