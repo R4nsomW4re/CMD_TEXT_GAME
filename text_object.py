@@ -9,9 +9,13 @@ class text_object:
 
     def next_character(self) -> None:
         self.cursor_pos += 1
+        if self.cursor_pos >= len(self.text):
+            self.cursor_pos = 0
 
     def prev_character(self) -> None:
         self.cursor_pos -= 1
+        if self.cursor_pos <= 0:
+            self.cursor_pos = len(self.text) - 1
 
     def set_character(self, pos) -> None:
         self.cursor_pos = pos
