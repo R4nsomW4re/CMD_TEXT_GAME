@@ -1,5 +1,4 @@
 import curses
-from text_object import text_object
 
 class screen:
     stdscr = curses.initscr()
